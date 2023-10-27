@@ -12,7 +12,6 @@
             </tr>
         </thead>
         <tbody>
-
             @foreach ($comments as $comment)
             <tr>
                 <td>{{$comment->idComentario}}</td>

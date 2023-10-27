@@ -10,6 +10,7 @@ use App\Models\users;
 use App\Models\User;
 use App\Models\incidentStatus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class IncidentsController extends Controller
@@ -48,11 +49,11 @@ class IncidentsController extends Controller
         $incident->descripcionIncidencias = $request->descripcionIncidencias;
         $incident->tiempoIncidencia = $request->tiempoIncidencia;
         $incident->idCategoria = $request->idCategoria;
-        $incident->idDepartamento = $request->idDepartamento;
+        $incident->idDepartamento = auth()->user()->idDepartamento;
         $incident->idUsuarios = auth()->user()->id;
         $incident->idEstadoDeIncidencias = $request->idEstadoDeIncidencias;
         $incident->idPrioridad = $request->idPrioridad;
-        dd($incident);
+
         $incident->save();
         return redirect()->route('incidents.index');
     }

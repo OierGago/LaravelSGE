@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@if(Auth::user() != null && Auth::user()->id == $incident->idUsuarios)
 <div class="container">
 <form class="mt-2" name="create_platform" action="{{route('incidents.update',$incident)}}"
 method="POST" enctype="multipart/form-data">
@@ -8,7 +9,7 @@ method="POST" enctype="multipart/form-data">
 <div class="form-group mb-3">
     <label for="TituloIncidencias" class="form-label">Título</label>
     <input type="text" class="form-control" id="TituloIncidencias" name="TituloIncidencias" required
-    value="{{$incident->TituloIncidencias}}"/>
+    value="{{$incident->tituloIncidencias}}"/>
 </div>
 <div class="form-group mb-3">
     <label for="descripcionIncidencias" class="form-label">Descripción</label>
@@ -29,8 +30,13 @@ method="POST" enctype="multipart/form-data">
         @endforeach
 </select>
 </div>
-
 <button type="submit" class="btn btn-primary" name="">Actualizar</button>
-</form>
+</form><br>
+<form action="{{route('incidents.destroy',$incident)}}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">Borrar</button>
+    </form>
 </div>
+@endif
 @endsection

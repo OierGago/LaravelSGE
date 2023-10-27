@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\comments;
 use App\Models\incidents;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
@@ -45,6 +46,7 @@ class CommentsController extends Controller
         $comment->textoComentario = $request->textoComentario;
         $comment->tiempoUtilizado = $request->tiempoUtilizado;
         $comment->idIncidencias = $request->idIncidencias;
+        $comment->idUsuarios = auth()->user()->id;
         $comment->save();
         return redirect()->back();
     }
