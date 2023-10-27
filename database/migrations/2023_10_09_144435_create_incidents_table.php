@@ -16,11 +16,12 @@ return new class extends Migration
             $table->string('tituloIncidencias');
             $table->string('descripcionIncidencias');
             $table->integer('tiempoIncidencia');
-            $table->foreignId('idCategoria')->references('idCategoria')->on('categories');
-            $table->foreignId('idDepartamento')->references('idDepartamento')->on('departments');
-            $table->foreignId('idUsuarios')->references('idUsuarios')->on('users');
-            $table->foreignId('idEstadoDeIncidencias')->references('idEstadoDeIncidencias')->on('incident_statuses');
-            $table->foreignId('idPrioridad')->references('idPrioridad')->on('priorities');
+            $table->foreignId('idCategoria')->references('idCategoria')->on('categories')->onDelete('cascade');
+            $table->foreignId('idDepartamento')->references('idDepartamento')->on('departments')->onDelete('cascade');
+            $table->foreignId('idUsuarios')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('idEstadoDeIncidencias');
+            $table->foreign('idEstadoDeIncidencias')->references('idEstadoDeIncidencias')->on('incident_statuses')->onDelete('cascade');
+            $table->foreignId('idPrioridad')->references('idPrioridad')->on('priorities')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

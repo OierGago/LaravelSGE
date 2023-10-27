@@ -12,15 +12,18 @@ class DepartmentsController extends Controller
      */
     public function index()
     {
-        //
+        $departments = Departments::all();
+
+        return view('departments.index',['departments' => $departments]);
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('departments.create');
     }
 
     /**
@@ -28,38 +31,45 @@ class DepartmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $department =  new departments();
+        $department -> nombreDepartamento =  $request ->nombreDepartamento;
+        $department->save();
+        return redirect()->route('departments.index');
     }
-
-    /**
+  /**
      * Display the specified resource.
      */
-    public function show(departments $departments)
+    public function show(departments $department)
     {
-        //
+        return view('departments.show',['department'=>$department]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(departments $departments)
+    public function edit(departments $department)
     {
-        //
+        return view('departments.edit',['department'=>$department]);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, departments $departments)
+    public function update(Request $request, departments $department)
     {
-        //
+        $department->nombreDepartamento =  $request->nombreDepartamento;
+        $department->save();
+        return view('departments.show', ['department' => $department]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(departments $departments)
+    public function destroy(departments $department)
     {
-        //
+        $department->delete();
+        return redirect()->route('departments.index');
     }
 }

@@ -13,11 +13,23 @@ class CommentsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categories')->insert([
+        DB::table('comments')->insert([
             'idComentario' => 1,
-            'textoComentario'=>"Este es un buen aporte",
+            'textoComentario'=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             'tiempoUtilizado' => 1,
             'idIncidencias' => 1,
+        ]);
+        DB::table('comments')->insert([
+            'idComentario' => 2,
+            'textoComentario'=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            'tiempoUtilizado' => 10,
+            'idIncidencias' => 2,
+        ]);
+        DB::table('comments')->insert([
+            'idComentario' => 3,
+            'textoComentario'=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            'tiempoUtilizado' => 6,
+            'idIncidencias' => 3,
         ]);
     }
 }

@@ -18,5 +18,13 @@ class CategoriesSeeder extends Seeder
             'idCategoria' => 1,
             'nombreCategoria'=>"Desarrollo"
         ]);
+        DB::table('categories')->insert([
+            'idCategoria' => 2,
+            'nombreCategoria'=>"Mantenimiento"
+        ]);
+        DB::table('categories')->insert([
+            'idCategoria' => 3,
+            'nombreCategoria'=>"Investigación"
+        ]);
     }
 }

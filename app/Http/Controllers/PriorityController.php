@@ -12,7 +12,8 @@ class PriorityController extends Controller
      */
     public function index()
     {
-        //
+        $priority = Priority::all();
+        return view('priorities.index',['priority' => $priority]);
     }
 
     /**
@@ -20,7 +21,8 @@ class PriorityController extends Controller
      */
     public function create()
     {
-        //
+        $priority = Priority::all();
+        return view('priorities.create',['priority' => $priority]);
     }
 
     /**
@@ -28,7 +30,11 @@ class PriorityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $priority = new Priority();
+        $priority->nombrePrioridad = $request->nombrePrioridad;
+        $priority->ordenPrioridad = $request->ordenPrioridad;
+        $priority->save();
+        return redirect()->route('priorities.index');
     }
 
     /**
@@ -36,7 +42,7 @@ class PriorityController extends Controller
      */
     public function show(priority $priority)
     {
-        //
+        return view('priorities.show',['priority' => $priority]);
     }
 
     /**
@@ -44,7 +50,8 @@ class PriorityController extends Controller
      */
     public function edit(priority $priority)
     {
-        //
+        $priorities = Priority::all();
+        return view('priorities.edit',['priority' => $priority]);
     }
 
     /**
@@ -52,7 +59,10 @@ class PriorityController extends Controller
      */
     public function update(Request $request, priority $priority)
     {
-        //
+        $priority->nombrePrioridad = $request->nombrePrioridad;
+        $priority->ordenPrioridad = $request->ordenPrioridad;
+        $priority->save();
+        return redirect()->route('priorities.show',['priority' => $priority]);
     }
 
     /**
@@ -60,6 +70,7 @@ class PriorityController extends Controller
      */
     public function destroy(priority $priority)
     {
-        //
+        $priority->delete();
+        return redirect()->route('priorities.index');
     }
 }

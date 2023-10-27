@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id('idComentario');
             $table->string('textoComentario');
-            $table->timestamp('tiempoUtilizado');
-            $table->foreignId('idIncidencias')->references('idIncidencias')->on('incidents');
+            $table->integer('tiempoUtilizado');
+            $table->unsignedBigInteger('idIncidencias');
+            $table->foreign('idIncidencias')->references('idIncidencias')->on('incidents')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

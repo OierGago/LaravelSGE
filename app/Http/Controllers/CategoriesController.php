@@ -12,15 +12,23 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Categories::all();
+        return view('categories.index',['categories' => $categories]);
     }
+    /**
+     * Display the specified resource.
+     */
+    public function show(categories $category)
+    {
+        return view('categories.show',['category'=>$category]);
 
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -28,38 +36,39 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new categories();
+        $category->nombreCategoria = $request->nombreCategoria;
+        $category->save();
+        return redirect()->route('categories.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(categories $categories)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(categories $categories)
+    public function edit(categories $category)
     {
-        //
+        return view('categories.edit',['category'=>$category]);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, categories $categories)
+    public function update(Request $request, categories $category)
     {
-        //
+       $category->nombreCategoria =  $request->nombreCategoria;
+       $category->save();
+       return view('categories.show',['category'=>$category]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(categories $categories)
+    public function destroy(categories $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index');
     }
 }

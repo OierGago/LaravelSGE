@@ -16,8 +16,23 @@ class IncidentStatusSeeder extends Seeder
     {
         DB::table('incident_statuses')->insert([
             'idEstadoDeIncidencias' => 1,
-            'nombreEstadoDeIncidencias'=>"Abierto",
+            'nombreEstadoDeIncidencias'=>"Nuevo",
             'ordenEstadoDeIncidencias'=> 1
+        ]);
+        DB::table('incident_statuses')->insert([
+            'idEstadoDeIncidencias' => 2,
+            'nombreEstadoDeIncidencias'=>"Pendiente",
+            'ordenEstadoDeIncidencias'=> 2
+        ]);
+        DB::table('incident_statuses')->insert([
+            'idEstadoDeIncidencias' => 3,
+            'nombreEstadoDeIncidencias'=>"Abierto",
+            'ordenEstadoDeIncidencias'=> 3
+        ]);
+        DB::table('incident_statuses')->insert([
+            'idEstadoDeIncidencias' => 4,
+            'nombreEstadoDeIncidencias'=>"Solucionado",
+            'ordenEstadoDeIncidencias'=> 4
         ]);
     }
 }

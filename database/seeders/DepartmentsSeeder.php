@@ -22,5 +22,9 @@ class DepartmentsSeeder extends Seeder
             'idDepartamento' => 2,
             'nombreDepartamento'=>"Multiplataforma"
         ]);
+        DB::table('departments')->insert([
+            'idDepartamento' => 3,
+            'nombreDepartamento'=>"Redes"
+        ]);
     }
 }

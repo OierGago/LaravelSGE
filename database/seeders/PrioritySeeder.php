@@ -16,8 +16,18 @@ class PrioritySeeder extends Seeder
     {
         DB::table('priorities')->insert([
             'idPrioridad' => 1,
-            'nombrePrioridad'=>"Alta",
+            'nombrePrioridad'=>"Baja",
             'ordenPrioridad'=> 3
+        ]);
+        DB::table('priorities')->insert([
+            'idPrioridad' => 2,
+            'nombrePrioridad'=>"Media",
+            'ordenPrioridad'=> 2
+        ]);
+        DB::table('priorities')->insert([
+            'idPrioridad' => 3,
+            'nombrePrioridad'=>"Alta",
+            'ordenPrioridad'=> 1
         ]);
     }
 }

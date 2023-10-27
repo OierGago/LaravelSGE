@@ -12,7 +12,8 @@ class IncidentStatusController extends Controller
      */
     public function index()
     {
-        //
+        $incidentStatus = IncidentStatus::all();
+        return view('incident_statuses.index',['incidentStatus' => $incidentStatus]);
     }
 
     /**
@@ -20,7 +21,8 @@ class IncidentStatusController extends Controller
      */
     public function create()
     {
-        //
+        $incidentStatus = IncidentStatus::all();
+        return view('incident_statuses.create',['incidentStatus' => $incidentStatus]);
     }
 
     /**
@@ -28,7 +30,11 @@ class IncidentStatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $incidentStatus = new incidentStatus();
+       $incidentStatus->nombreEstadoDeIncidencias = $request->nombreEstadoDeIncidencias;
+       $incidentStatus->ordenEstadoDeIncidencias = $request->ordenEstadoDeIncidencias;
+       $incidentStatus->save();
+       return redirect()->route('incident_statuses.index');
     }
 
     /**
@@ -36,7 +42,8 @@ class IncidentStatusController extends Controller
      */
     public function show(incidentStatus $incidentStatus)
     {
-        //
+        return view('incident_statuses.show',['incidentStatus'=>$incidentStatus]);
+
     }
 
     /**
@@ -44,7 +51,8 @@ class IncidentStatusController extends Controller
      */
     public function edit(incidentStatus $incidentStatus)
     {
-        //
+        //$incidentStatus = IncidentStatus::all();
+        return view('incident_statuses.edit',['incidentStatus' => $incidentStatus]);
     }
 
     /**
@@ -52,7 +60,11 @@ class IncidentStatusController extends Controller
      */
     public function update(Request $request, incidentStatus $incidentStatus)
     {
-        //
+
+        $incidentStatus->nombreEstadoDeIncidencias = $request->nombreEstadoDeIncidencias;
+        $incidentStatus->ordenEstadoDeIncidencias = $request->ordenEstadoDeIncidencias;
+        $incidentStatus->save();
+        return view('incident_statuses.show',['incidentStatus'=>$incidentStatus]);
     }
 
     /**
@@ -60,6 +72,7 @@ class IncidentStatusController extends Controller
      */
     public function destroy(incidentStatus $incidentStatus)
     {
-        //
+        $incidentStatus->delete();
+        return redirect()->route('incident_statuses.index');
     }
 }

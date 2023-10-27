@@ -29,8 +29,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    <ul class="navbar-nav">
+                        <li class="navbar-nav nav-item"><a class="nav-link" href="/incidents">Incidencias</a></li>
+                        <li class="navbar-nav nav-item"><a class="nav-link" href="/priorities">Prioridades</a></li>
+                        <li class="navbar-nav nav-item"><a class="nav-link" href="/departments">Departamentos</a></li>
+                        <li class="navbar-nav nav-item"><a class="nav-link" href="/categories">Categorias</a></li>
+                        <li class="navbar-nav nav-item"><a class="nav-link" href="/incident_statuses">Status</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,6 +59,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/users">Tus incidencias</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -15,15 +15,21 @@ class UsersSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'nombreUsuarios' => "Markel",
-            'mailUsuarios'=>"ddd@gmail.com",
-            'passUsuarios'=>"12345678",
+            'name' => "Markel",
+            'email'=>"ddd@gmail.com",
+            'password'=>"12345678",
             'idDepartamento'=> 1
         ]);
         DB::table('users')->insert([
-            'nombreUsuarios' => "Oier",
-            'mailUsuarios'=>"rrr@gmail.com",
-            'passUsuarios'=>"12345678",
+            'name' => "Oier",
+            'email'=>"rrr@gmail.com",
+            'password'=>"12345678",
+            'idDepartamento'=>2
+        ]);
+        DB::table('users')->insert([
+            'name' => "Juan",
+            'email'=>"juan@juan.juan",
+            'password'=>"12345678",
             'idDepartamento'=>2
         ]);
     }
