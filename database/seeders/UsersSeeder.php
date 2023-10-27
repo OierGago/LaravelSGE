@@ -17,20 +17,34 @@ class UsersSeeder extends Seeder
         DB::table('users')->insert([
             'name' => "Markel",
             'email'=>"ddd@gmail.com",
-            'password'=>"12345678",
-            'idDepartamento'=> 1
+            'password'=>bcrypt('12345678'),
+            'idDepartamento'=> 1,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('users')->insert([
             'name' => "Oier",
             'email'=>"rrr@gmail.com",
-            'password'=>"12345678",
-            'idDepartamento'=>2
+            'password'=>bcrypt("12345678"),
+            'idDepartamento'=>2,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('users')->insert([
             'name' => "Juan",
-            'email'=>"juan@juan.juan",
-            'password'=>"12345678",
-            'idDepartamento'=>2
+            'email'=>"juan@gmail.com",
+            'password'=>bcrypt("12345678"),
+            'idDepartamento'=>3,
+            'created_at'=>now(),
+            'updated_at'=>now()
+        ]);
+        DB::table('users')->insert([
+            'name' => "Elorrieta",
+            'email'=>"elorrieta@elorrieta.com",
+            'password'=>bcrypt("12345678"),
+            'idDepartamento'=>1,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
     }
 }

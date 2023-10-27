@@ -19,6 +19,8 @@ class CommentsSeeder extends Seeder
             'tiempoUtilizado' => 1,
             'idUsuarios' =>1,
             'idIncidencias' => 1,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('comments')->insert([
             'idComentario' => 2,
@@ -26,6 +28,8 @@ class CommentsSeeder extends Seeder
             'tiempoUtilizado' => 10,
             'idUsuarios' => 2,
             'idIncidencias' => 2,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('comments')->insert([
             'idComentario' => 3,
@@ -33,6 +37,8 @@ class CommentsSeeder extends Seeder
             'tiempoUtilizado' => 6,
             'idUsuarios' => 3,
             'idIncidencias' => 3,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
     }
 }

@@ -24,6 +24,8 @@ class IncidentsSeeder extends Seeder
             'idUsuarios'=>1,
             'idEstadoDeIncidencias'=>1,
             'idPrioridad'=>1,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('incidents')->insert([
             'idIncidencias' => 2,
@@ -35,6 +37,8 @@ class IncidentsSeeder extends Seeder
             'idUsuarios'=>2,
             'idEstadoDeIncidencias'=>1,
             'idPrioridad'=>1,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('incidents')->insert([
             'idIncidencias' => 3,
@@ -46,6 +50,8 @@ class IncidentsSeeder extends Seeder
             'idUsuarios'=>3,
             'idEstadoDeIncidencias'=>2,
             'idPrioridad'=>3,
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
     }
 }

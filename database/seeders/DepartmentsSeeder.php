@@ -15,16 +15,22 @@ class DepartmentsSeeder extends Seeder
     {
          DB::table('departments')->insert([
             'idDepartamento' => 1,
-            'nombreDepartamento'=>"Web"
+            'nombreDepartamento'=>"Web",
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
 
         DB::table('departments')->insert([
             'idDepartamento' => 2,
-            'nombreDepartamento'=>"Multiplataforma"
+            'nombreDepartamento'=>"Multiplataforma",
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('departments')->insert([
             'idDepartamento' => 3,
-            'nombreDepartamento'=>"Redes"
+            'nombreDepartamento'=>"Redes",
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
     }
 }

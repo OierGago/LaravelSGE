@@ -38,5 +38,9 @@ method="POST" enctype="multipart/form-data">
     <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">Borrar</button>
     </form>
 </div>
+@else
+<div class="container">
+<h2>Para poder modificar el incidente debes estar registrado y ser dueño de la incidencia</h2>
+</div>
 @endif
 @endsection

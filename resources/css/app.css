@@ -1,0 +1,46 @@
+.custom-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f2f5 !important
+}
+.form-control {
+        border: 1px solid black;
+    }
+.contenido
+{
+    background-color: #cfcfcf;
+    padding: 1.5em;
+    border: 1px solid black !important;
+}
+
+.carta{
+    background-color: #f0f2f5 !important
+}
+.texto
+{
+    background-color: rgb(255, 255, 255);
+    padding: 3em;
+}
+.boton{
+    margin-bottom: 1em;
+    margin-right: .25em;
+}
+.th
+{
+    margin: 1em;
+}
+.tr
+{
+    margin: 1em;
+}
+.tabla-incidencia
+{
+    width: 70%;
+    border: 1px solid black;
+}
+ .tabla-incidencia td,.tabla-incidencia th
+{
+    border: 1px solid black;
+    padding: 8px;
+}

@@ -19,8 +19,10 @@ class UsersController extends Controller
         $users = Users::all();
         $id = Auth::user()->id;
         if($id != null){
-            $incidents=Incidents::where('idUsuarios', $id)->get();
-            // dd($incidents);
+            $incidents=Incidents::where('idUsuarios', $id)
+            ->orderBy('created_at', 'DESC')
+            ->get();
+            //dd($incidents);
             return view('users.index',['users' => $users, 'incidents' => $incidents]);
         }
         return redirect("/register");

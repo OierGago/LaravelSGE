@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container contenido">
         <div class="col-md-12 col-xs-12">
             <form id="bug_action" method="post" action="bug_actiongroup_page.php">
                 <div class="widget-box widget-color-blue2">
@@ -9,7 +9,7 @@
                         @auth
                             @if (Auth::user() != null)
                                 <a class="btn btn-success btn-sm float-right" href="{{ route('incident_statuses.create') }}"
-                                    role="button">Crear</a>
+                                    role="button">Crear un estado</a>
                             @endauth
                         @else
                         @endif
@@ -20,6 +20,18 @@
                                 <h2>
                                     <a href="/incident_statuses/{{ $incidentStatus->idEstadoDeIncidencias }}">{{ $incidentStatus->nombreEstadoDeIncidencias }}</a>
                                 </h2>
+                                <div class="d-flex flex-row">
+                                <a class="btn boton btn-warning btn-sm"
+                                                                href="{{ route('incident_statuses.edit', $incidentStatus) }}"
+                                                                role="button">Editar</a>
+                                <form action="{{route('incident_statuses.destroy',$incidentStatus)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn boton btn-sm btn-danger" type="submit"
+                                    onclick="return confirm('Are you sure?')">Borrar
+                                    </button>
+                                    </form>
+                                </div>
                                 <table id="buglist"
                                     class="table table-bordered table-condensed table-hover table-striped">
                                     <thead>
@@ -42,8 +54,8 @@
                                                 </td>
                                                 <td class="column-department">
                                                     {{ $incident->departamento->nombreDepartamento }}</td>
-                                                <th class="column-prioridad"> {{ $incident->prioridad->nombrePrioridad }}
-                                                </th>
+                                                <td class="column-prioridad"> {{ $incident->prioridad->nombrePrioridad }}
+                                                </td>
                                                 <td class="column-last-modified">{{ $incident->created_at }}</td>
                                                 <td class="column-text">{{ $incident->descripcionIncidencias }}</td>
                                             </tr>

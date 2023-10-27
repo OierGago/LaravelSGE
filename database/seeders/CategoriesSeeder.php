@@ -16,15 +16,21 @@ class CategoriesSeeder extends Seeder
     {
         DB::table('categories')->insert([
             'idCategoria' => 1,
-            'nombreCategoria'=>"Desarrollo"
+            'nombreCategoria'=>"Desarrollo",
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('categories')->insert([
             'idCategoria' => 2,
-            'nombreCategoria'=>"Mantenimiento"
+            'nombreCategoria'=>"Mantenimiento",
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
         DB::table('categories')->insert([
             'idCategoria' => 3,
-            'nombreCategoria'=>"Investigación"
+            'nombreCategoria'=>"Investigación",
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
     }
 }

@@ -1,17 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<style>
-    /* Estilos para la card con fondo degradado y sombra */
-    .custom-card {
-        background: rgb(179, 179, 179); /* Degradado de azul a verde */
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra */
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .form-control {
-            border: 1px solid black;
-        }
-</style>
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
