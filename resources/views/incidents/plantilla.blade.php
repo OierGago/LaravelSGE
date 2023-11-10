@@ -1,13 +1,9 @@
 <table id="buglist" class="table table-bordered table-condensed table-hover table-striped">
     <thead>
         <tr class="buglist-headers">
-            @auth
-                @if (Auth::user() != null)
-                    <th class="column-edit"><a class="btn btn-success btn-sm" href="{{ route('incidents.create') }}"
-                            role="button">Crear</a></th>
-                @endauth
-            @else
-            @endif
+            <th class="colum-editar">
+                <p>Editar</p>
+            </th>
 
             <th class="column-priority">
                 <p>Prioridad</p>

@@ -6,7 +6,7 @@
                 <!-- Card con fondo degradado y sombra -->
                 <div class="card custom-card">
                     <div class="card-body">
-                        <h2 class="card-title">PRIORIDAD</h2>
+                        <h2 class="card-title">CATEGORIA</h2>
                         <form class="mt-2" name="create_platform" action="{{ route('categories.store') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf

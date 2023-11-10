@@ -1,4 +1,9 @@
 import './bootstrap';
+
+function cambiarTema() {
+
+}
+
 (() => {
     'use strict';
 
@@ -57,6 +62,8 @@ import './bootstrap';
         });
       }
     });
+
+
 
     // Cargar y aplicar el tema guardado al cargar la página
     const savedTheme = getStoredTheme();

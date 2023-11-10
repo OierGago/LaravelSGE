@@ -48,4 +48,3 @@ class UsersSeeder extends Seeder
         ]);
     }
 }
-git 

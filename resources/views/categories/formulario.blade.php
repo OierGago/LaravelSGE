@@ -8,15 +8,18 @@
                     <div class="card-body">
                         <h2 class="card-title">CATEGORIA</h2>
                         <form class="mt-2" name="create_platform"
-                        action="@if (isset($category)) {{ route('categories.update', $category) }}@else{{ route('categories.store') }} @endif "
+                        action="@if (isset($category)) {{ route('categories.update', $category) }}@else{{ route('priorities.store') }} @endif "
                         method="POST" enctype="multipart/form-data">
                         @csrf
                         @if (isset($category))
                             @method('PUT')
                         @endif
+                        <!-- Campo de Texto -->
                         <div class="form-group">
-                            <label  for="nombreCategoria">Nombre Categoria</label>
-                            <input type="text" class="form-control" id="nombreCategoria" required value="{{old('nombreCategoria',$category->nombreCategoria ?? '')}}" placeholder="Ingresa nombre de la categoria">
+                            <label for="nombreCategoria" class="form-label">Nombre</label>
+                            <input value="{{ old('nombreCategoria', $category->nombreCategoria ?? '') }}" type="text"
+                                class="form-control" id="nombreCategoria" name="nombreCategoria" required
+                                placeholder="Ingresa nombre de la Categoria" />
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Actualizar</button>

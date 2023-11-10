@@ -10,6 +10,7 @@ class categories extends Model
 {
     use HasFactory;
     protected $primaryKey = 'idCategoria';
+
     public function incidencias(): HasMany {
         return $this->hasMany(incidents::class,'idCategoria','idCategoria');
     }

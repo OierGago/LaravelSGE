@@ -21,6 +21,8 @@ class IncidentsController extends Controller
     public function index()
     {
         $incidents = Incidents::all();
+        $incidents = Incidents::orderBy('created_at','desc')->get();
+
         return view('incidents.index',['incidents' => $incidents]);
     }
 

@@ -40,7 +40,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <button id="theme-toggle">Cambiar Tema</button>
+                        <button id="theme-toggle" class="btn">Cambiar Tema</button>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

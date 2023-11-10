@@ -13,6 +13,7 @@ class DepartmentsController extends Controller
     public function index()
     {
         $departments = Departments::all();
+        $departments = Departments::orderBy('nombreDepartamento', 'asc')->get();
 
         return view('departments.index',['departments' => $departments]);
     }

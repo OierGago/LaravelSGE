@@ -23,10 +23,10 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="ordenPrioridad" class="form-label">Tiempo estimado</label>
+                                <label for="ordenPrioridad" class="form-label">Orden Prioridad</label>
                                 <input value="{{ old('ordenPrioridad', $priority->ordenPrioridad ?? '') }}" type="number"
                                     class="form-control" id="ordenPrioridad" name="ordenPrioridad" required
-                                    placeholder="Ingresa el tiempo estimado" />
+                                    placeholder="Ingresa Orden Prioridad" />
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Crear</button>

@@ -12,13 +12,14 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Categories::all();
+        $categories = Categories::all() ;
+        $categories = Categories::orderBy('nombreCategoria', 'asc')->get();
         return view('categories.index',['categories' => $categories]);
     }
     /**
      * Display the specified resource.
      */
-    public function show(categories $category)
+    public function show(Categories $category)
     {
         return view('categories.show',['category'=>$category]);
 
@@ -28,7 +29,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.formulario');
+        return view('categories.create');
     }
 
     /**
@@ -36,7 +37,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new categories();
+        $category = new Categories();
         $category->nombreCategoria = $request->nombreCategoria;
         $category->save();
         return redirect()->route('categories.index');

@@ -14,9 +14,11 @@ class PriorityController extends Controller
      */
     public function index()
     {
-        $priority = Priority::all();
+        //$priority = Priority::all();
+        $priorities = Priority::orderBy('ordenPrioridad', 'asc')->get();
 
-        return view('priorities.index',['priority' => $priority]);
+
+        return view('priorities.index',['priorities' => $priorities]);
     }
 
     /**

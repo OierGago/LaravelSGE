@@ -13,6 +13,8 @@ class IncidentStatusController extends Controller
     public function index()
     {
         $incidentStatus = IncidentStatus::all();
+        $incidentStatus = IncidentStatus::orderBy('nombreEstadoDeIncidencias', 'asc')->get();
+
         return view('incident_statuses.index',['incidentStatus' => $incidentStatus]);
     }
 
@@ -31,7 +33,6 @@ class IncidentStatusController extends Controller
     {
        $incidentStatus = new incidentStatus();
        $incidentStatus->nombreEstadoDeIncidencias = $request->nombreEstadoDeIncidencias;
-       $incidentStatus->ordenEstadoDeIncidencias = $request->ordenEstadoDeIncidencias;
        $incidentStatus->save();
        return redirect()->route('incident_statuses.index');
     }
@@ -61,7 +62,6 @@ class IncidentStatusController extends Controller
     {
 
         $incidentStatus->nombreEstadoDeIncidencias = $request->nombreEstadoDeIncidencias;
-        $incidentStatus->ordenEstadoDeIncidencias = $request->ordenEstadoDeIncidencias;
         $incidentStatus->save();
         return view('incident_statuses.show',['incidentStatus'=>$incidentStatus]);
     }

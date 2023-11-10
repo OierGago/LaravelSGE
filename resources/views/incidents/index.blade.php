@@ -9,6 +9,16 @@
                     <div class="widget-header widget-header-small">
                         <h4 class="widget-title lighter">Visualizando incidencias</h4>
                     </div>
+                    <div class="widget-header widget-header-small">
+                        @auth
+                            @if (Auth::user() != null)
+                                <th class="column-edit"><a class="btn btn-success btn-sm" href="{{ route('incidents.create') }}"
+                                        role="button">Crear</a></th>
+                            @endauth
+                        @else
+                        @endif
+                    </div>
+                    <br>
                     <div class="widget-main no-padding">
                         <div class="table-responsive checkbox-range-selection">
                             @include('incidents.plantilla')
