@@ -4,7 +4,7 @@
         <div class="texto">
             {{-- {{dd($incident)}} --}}
             <div class="tabla-titilo">
-                <h1>{{ $incident->tituloIncidencias }}</h1>
+                <h1 class="color:black">{{ $incident->tituloIncidencias }}</h1>
                 <table class="tabla-incidencia">
                     <thead>
                         <th>ID</th>

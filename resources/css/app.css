@@ -48,21 +48,45 @@
     margin-left: .25em;
 }
 
-.th {
-    margin: 1em;
+
+
+.tabla-titilo {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.tr {
-    margin: 1em;
+h1 {
+    color: #007bff;
+    text-align: center;
 }
 
 .tabla-incidencia {
-    width: 70%;
-    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.tabla-incidencia td,
-.tabla-incidencia th {
-    border: 1px solid black;
+.tabla-incidencia th,
+.tabla-incidencia td {
+    border: 1px solid #dee2e6;
     padding: 8px;
+    text-align: left;
 }
+
+.tabla-incidencia th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.separador {
+    background-color: #f8f9fa;
+}
+
+th,
+td {
+    white-space: nowrap;
+}
+
