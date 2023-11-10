@@ -16,11 +16,7 @@
                                 <input type="text" class="form-control" id="nombreEstadoDeIncidencias"
                                     name="nombreEstadoDeIncidencias" required />
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="ordenEstadoDeIncidencias" class="form-label">Orden Estado De Incidencias</label>
-                                <input type="number" class="form-control" id="ordenEstadoDeIncidencias"
-                                    name="ordenEstadoDeIncidencias" required />
-                            </div>
+                       
                             <button type="submit" class="btn btn-primary" name="">Crear</button>
                         </form>
                     </div>

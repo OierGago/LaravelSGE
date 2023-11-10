@@ -11,7 +11,7 @@
                         action="@if (isset($category)) {{ route('categories.update', $category) }}@else{{ route('categories.store') }} @endif "
                         method="POST" enctype="multipart/form-data">
                         @csrf
-                        @if (isset($priority))
+                        @if (isset($category))
                             @method('PUT')
                         @endif
                         <div class="form-group">

@@ -17,12 +17,8 @@
                             value="{{$incidentStatus->nombreEstadoDeIncidencias}}" placeholder="Ingresa nombre del Estado"/>
                         </div>
                         <br>
-                        <div class="form-group mb-3">
-                            <label for="ordenEstadoDeIncidencias" class="form-label">Orden</label>
-                            <input type="number" class="form-control" id="ordenEstadoDeIncidencias" name="ordenEstadoDeIncidencias" required
-                            value="{{$incidentStatus->ordenEstadoDeIncidencias}}" placeholder="Ingresa el orden"/>
-                        </div>
-                        <br>
+
+
                         <button type="submit" class="btn btn-primary">Actualizar</button>
                     </form>
                 </div>

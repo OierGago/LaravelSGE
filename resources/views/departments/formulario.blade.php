@@ -11,7 +11,7 @@
                         action="@if (isset($department)) {{ route('departments.update', $department) }}@else{{ route('departments.store') }} @endif "
                         method="POST" enctype="multipart/form-data">
                         @csrf
-                        @if (isset($priority))
+                        @if (isset($department))
                             @method('PUT')
                         @endif
                         <div class="form-group">

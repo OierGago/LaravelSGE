@@ -8,10 +8,10 @@
                     <div class="card-body">
                         <h2 class="card-title">ESTADO DE INCIDENCIAS</h2>
                         <form class="mt-2" name="create_platform"
-                        action="@if (isset($incidentStatus)) {{ route('incident_statuses.update', $department) }}@else{{ route('incident_statuses.store') }} @endif "
+                        action="@if (isset($incidentStatus)) {{ route('incident_statuses.update', $incidentStatus) }}@else{{ route('incident_statuses.store') }} @endif "
                         method="POST" enctype="multipart/form-data">
                         @csrf
-                        @if (isset($priority))
+                        @if (isset($incidentStatus))
                             @method('PUT')
                         @endif
                         <div class="form-group mb-3">
@@ -20,12 +20,8 @@
                             value="{{old('nombreEstadoDeIncidencias',$incidentStatus->nombreEstadoDeIncidencias ?? '')}}" placeholder="Ingresa nombre del Estado"/>
                         </div>
                         <br>
-                        <div class="form-group mb-3">
-                            <label for="ordenEstadoDeIncidencias" class="form-label">Orden</label>
-                            <input type="number" class="form-control" id="ordenEstadoDeIncidencias" name="ordenEstadoDeIncidencias"
-                            value="{{old('ordenEstadoDeIncidencias',$incidentStatus->ordenEstadoDeIncidencias ?? '')}}" placeholder="Ingresa el orden"/>
-                        </div>
-                        <br>
+
+                        
                         <button type="submit" class="btn btn-primary">Actualizar</button>
                     </form>
                 </div>

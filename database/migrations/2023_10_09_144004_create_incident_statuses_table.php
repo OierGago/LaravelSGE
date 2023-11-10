@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('incident_statuses', function (Blueprint $table) {
             $table->id('idEstadoDeIncidencias');
             $table->string('nombreEstadoDeIncidencias')-> unique();
-            $table->integer('ordenEstadoDeIncidencias');
             $table->timestamps();
         });
     }

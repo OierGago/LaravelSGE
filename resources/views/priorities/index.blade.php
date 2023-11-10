@@ -36,9 +36,36 @@
                                     @endauth
                                 @else
                                 @endif
-                                @foreach ($priority->incidenciasCinco as $incidents)
-                                    @include('incidents.plantilla', $incidents)
-                                @endforeach
+                                <table id="buglist"
+                                class="table table-bordered table-condensed table-hover table-striped">
+                                <thead>
+                                    <tr class="buglist-headers">
+                                        <th class="column-title">Titulo</th>
+                                        <th class="column-status">Estado</th>
+                                        <th class="column-category">Categoria</th>
+                                        <th class="column-prioriti">Departamento</th>
+                                        <th class="column-last-modified">Actualizada</th>
+                                        <th class="column-text">Resumen</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($priority->incidenciasCinco as $incident)
+                                        <tr>
+                                            <td class="column-title"><a href="incidents/{{ $incident->idIncidencias }}">
+                                                    {{ $incident->tituloIncidencias }}</a></td>
+                                            <td class="column-status">
+                                                {{ $incident->estatus->nombreEstadoDeIncidencias }}
+                                            </td>
+                                            <td class="column-category">
+                                                {{ $incident->categoria->nombreCategoria }}
+                                            </td>
+                                            <td class="column-departamento">  {{ $incident->departamento->nombreDepartamento  }}</td>
+                                            <td class="column-last-modified">{{ $incident->created_at }}</td>
+                                            <td class="column-text">{{ $incident->descripcionIncidencias }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                             @endforeach
                         </div>
                     </div>
