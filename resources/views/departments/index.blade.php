@@ -11,27 +11,42 @@
                             </ul>
                         </div>
                     @endif
-                    <h4 class="widget-title lighter">Visualizando Departamentos</h4>
-                    <a class="btn btn-success btn-sm float-right" href="{{ route('departments.create') }}"
-                        role="button">Crear un departamento</a>
+                    <div class="title_btn">
+                        <div class="titleName">
+                            <h4 class="widget-title lighter">Visualizando Departamentos</h4>
+
+                        </div>
+                        <div class="btnce">
+                            <a class="btn btn-success btn-sm float-right" href="{{ route('departments.create') }}"
+                                role="button">Crear un departamento</a>
+                        </div>
+                    </div>
+
                 </div><br>
                 <div class="widget-main no-padding">
                     <div class="table-responsive checkbox-range-selection">
                         @foreach ($departments as $department)
-                            <h2>
-                                <a href="/departments/{{$department->idDepartamento}}">{{ $department->nombreDepartamento }}</a>
-                            </h2>
-                            <div class="d-flex flex-row">
-                            <a class="btn boton btn-warning btn-sm"
-                                                            href="{{ route('departments.edit', $department) }}"
-                                                            role="button">Editar</a>
-                            <form action="{{route('departments.destroy',$department)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn boton btn-sm btn-danger" type="submit"
-                                onclick="return confirm('Are you sure?')">Borrar</button>
-                                </form>
+                            <div class="title_btn">
+                                <div class="titleName">
+                                    <h2>
+                                        <a
+                                            href="/departments/{{ $department->idDepartamento }}">{{ $department->nombreDepartamento }}</a>
+                                    </h2>
+                                </div>
+                                <div class="btnce">
+                                    <a class="btn boton btn-warning btn-sm"
+                                        href="{{ route('departments.edit', $department) }}" role="button">Editar</a>
+                                    <form action="{{ route('departments.destroy', $department) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn boton btn-sm btn-danger" type="submit"
+                                            onclick="return confirm('Are you sure?')">Borrar</button>
+                                    </form>
+                                </div>
                             </div>
+
+
+
                             @include('incidents.plantilla', ['incidents' => $department->incidenciascinco])
                         @endforeach
                     </div>

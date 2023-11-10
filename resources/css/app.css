@@ -1,11 +1,29 @@
 .custom-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Sombra */
     padding: 20px;
     border-radius: 10px;
 }
+
 .form-control {
-        border: 1px solid black;
-    }
+    border: 1px solid black;
+}
+
+.title_btn {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 2em;
+}
+
+.titleName {
+    margin-left: 1em;
+}
+
+.btnce {
+    margin-right: 1em;
+    display: inherit;
+}
+
 /* .contenido
 {
     background-color: #cfcfcf;
@@ -16,33 +34,35 @@
 /* .carta{
     background-color: #f0f2f5 !important
 } */
-.texto
-{
+.texto {
     /* background-color: rgb(255, 255, 255); */
     padding: 3em;
 }
-.boton{
+
+.boton {
     margin-bottom: 1em;
     margin-right: .25em;
 }
-.botonComment{
+
+.botonComment {
     margin-left: .25em;
 }
-.th
-{
+
+.th {
     margin: 1em;
 }
-.tr
-{
+
+.tr {
     margin: 1em;
 }
-.tabla-incidencia
-{
+
+.tabla-incidencia {
     width: 70%;
     border: 1px solid black;
 }
- .tabla-incidencia td,.tabla-incidencia th
-{
+
+.tabla-incidencia td,
+.tabla-incidencia th {
     border: 1px solid black;
     padding: 8px;
 }
