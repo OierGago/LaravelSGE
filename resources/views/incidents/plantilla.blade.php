@@ -4,7 +4,6 @@
             <th class="colum-editar">
                 <p>Editar</p>
             </th>
-
             <th class="column-priority">
                 <p>Prioridad</p>
             </th>
@@ -38,8 +37,8 @@
                             <a class="btn btn-warning btn-sm" href="{{ route('incidents.edit', $incident) }}"
                                 role="button">Editar</a>
                         </td>
-                    @elseif (Auth::user()->id != $incident->idUsuarios)
-                        <td class="column-edit"></td>
+                        @else
+                        <td></td>
                     @endif
                 @endauth
                 <td class="column-priority">{{ $incident->prioridad->nombrePrioridad }}</td>

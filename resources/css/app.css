@@ -51,7 +51,7 @@
 
 
 .tabla-titilo {
-    max-width: 600px;
+    max-width: fit-content;
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
@@ -77,16 +77,21 @@ h1 {
 }
 
 .tabla-incidencia th {
-    background-color: #007bff;
+    background-color: #4194ec7e;
+
     color: #ffffff;
 }
 
-.separador {
-    background-color: #f8f9fa;
-}
+
 
 th,
 td {
     white-space: nowrap;
 }
-
+.tableBody {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 

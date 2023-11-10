@@ -3,55 +3,58 @@
     <div class="container">
         <div class="texto">
             {{-- {{dd($incident)}} --}}
-            <div class="tabla-titilo">
-                <h1 class="color:black">{{ $incident->tituloIncidencias }}</h1>
-                <table class="tabla-incidencia">
-                    <thead>
-                        <th>ID</th>
-                        <th>DEPARTAMENTO</th>
-                        <th>CATEGORIA</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $incident->idIncidencias }}</td>
-                            <td>{{ $incident->departamento->nombreDepartamento }}</td>
-                            <td>{{ $incident->categoria->nombreCategoria }}</td>
-                        </tr>
-                        <tr class="separador">
+            <div class="tableBody">
+                <div class="tabla-titilo table-responsive">
+                    <h1>{{ $incident->tituloIncidencias }}</h1>
+                    <table class="tabla-incidencia ">
+                        <thead>
+                            <th>ID</th>
+                            <th>DEPARTAMENTO</th>
+                            <th>CATEGORIA</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ $incident->idIncidencias }}</td>
+                                <td>{{ $incident->departamento->nombreDepartamento }}</td>
+                                <td>{{ $incident->categoria->nombreCategoria }}</td>
+                            </tr>
+                            <tr class="separador">
 
-                            <td colspan="3"></td>
-                        </tr>
-                        <tr>
-                            <th>ESTADO</th>
-                            <td colspan="2">{{ $incident->estatus->nombreEstadoDeIncidencias }}</td>
-                        </tr>
-                        <tr>
-                            <th>PRIORIDAD</th>
-                            <td colspan="2">{{ $incident->prioridad->nombrePrioridad }}</td>
-                        </tr>
-                        <tr class="separador">
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <th>ESTADO</th>
+                                <td colspan="2">{{ $incident->estatus->nombreEstadoDeIncidencias }}</td>
+                            </tr>
+                            <tr>
+                                <th>PRIORIDAD</th>
+                                <td colspan="2">{{ $incident->prioridad->nombrePrioridad }}</td>
+                            </tr>
+                            <tr class="separador">
 
-                            <td colspan="3"></td>
-                        </tr>
-                        <tr>
-                            <th>USUARIO</th>
-                            <td colspan="2">{{ $incident->usuario->name }}</td>
-                        </tr>
-                        <tr>
-                            <th>DESCRIPCION</th>
-                            <td colspan="2"> {{ $incident->descripcionIncidencias }}</td>
-                        </tr>
-                        <tr>
-                            <th>T.E (Min){{ $incident->tiempoIncidencia }} </th>
-                            <th colspan="2">Creado:{{ $incident->created_at }} </th>
-                        </tr>
-                    </tbody>
-                </table>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <th>USUARIO</th>
+                                <td colspan="2">{{ $incident->usuario->name }}</td>
+                            </tr>
+                            <tr>
+                                <th>DESCRIPCION</th>
+                                <td colspan="2"> {{ $incident->descripcionIncidencias }}</td>
+                            </tr>
+                            <tr>
+                                <th>T.E (Min){{ $incident->tiempoIncidencia }} </th>
+                                <th colspan="2">Creado:{{ $incident->created_at }} </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
 
-            @auth
-            </div>
+
+        </div>
+        @auth
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8 col-lg-12">
                     <div class="card carta shadow-0 border">
@@ -81,9 +84,9 @@
                                                     </form>
                                                 @endif
                                                 @if ($comentario->idUsuarios == @Auth::user()->id)
-                                                <a class="btn botonComment btn-warning btn-sm"
-                                                href="{{ route('comments.edit', $comentario) }}"
-                                                role="button">Editar</a>
+                                                    <a class="btn botonComment btn-warning btn-sm"
+                                                        href="{{ route('comments.edit', $comentario) }}"
+                                                        role="button">Editar</a>
                                                 @endif
                                             </div>
                                         </div>
@@ -104,12 +107,9 @@
                     <option value="{{ $incident->idIncidencias }}">{{ $incident->idIncidencias }}</option>
                 </select>
             </div>
-        </form>
+            </form>
     </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
     @endif
 @endsection
