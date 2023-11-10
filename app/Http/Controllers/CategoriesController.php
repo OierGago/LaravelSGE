@@ -28,7 +28,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('categories.formulario');
     }
 
     /**
@@ -49,7 +49,7 @@ class CategoriesController extends Controller
      */
     public function edit(categories $category)
     {
-        return view('categories.edit',['category'=>$category]);
+        return view('categories.formulario',['category'=>$category]);
 
     }
 

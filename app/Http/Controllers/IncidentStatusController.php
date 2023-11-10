@@ -21,8 +21,7 @@ class IncidentStatusController extends Controller
      */
     public function create()
     {
-        $incidentStatus = IncidentStatus::all();
-        return view('incident_statuses.create',['incidentStatus' => $incidentStatus]);
+        return view('incident_statuses.formulario');
     }
 
     /**
@@ -52,7 +51,7 @@ class IncidentStatusController extends Controller
     public function edit(incidentStatus $incidentStatus)
     {
         //$incidentStatus = IncidentStatus::all();
-        return view('incident_statuses.edit',['incidentStatus' => $incidentStatus]);
+        return view('incident_statuses.formulario',['incidentStatus' => $incidentStatus]);
     }
 
     /**

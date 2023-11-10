@@ -7,7 +7,7 @@
         <form id="bug_action" method="post" action="bug_actiongroup_page.php">
             <div class="widget-box widget-color-blue2">
                 <div class="widget-header widget-header-small">
-                    <h4 class="widget-title lighter">Visualizando incidencias</h4>
+                    <h4 class="widget-title lighter">Visualizando tus incidencias</h4>
                 </div>
                 <div class="widget-main no-padding">
                     <div class="table-responsive checkbox-range-selection">

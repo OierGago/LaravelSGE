@@ -23,7 +23,7 @@ class DepartmentsController extends Controller
      */
     public function create()
     {
-        return view('departments.create');
+        return view('departments.formulario');
     }
 
     /**
@@ -50,7 +50,7 @@ class DepartmentsController extends Controller
      */
     public function edit(departments $department)
     {
-        return view('departments.edit',['department'=>$department]);
+        return view('departments.formulario',['department'=>$department]);
 
     }
 
@@ -67,9 +67,14 @@ class DepartmentsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(departments $department)
+     public function destroy(departments $department)
     {
-        $department->delete();
-        return redirect()->route('departments.index');
+        try {
+            $department->delete();
+            return redirect()->route('departments.index');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'No se pudo borrar el departamento porque tiene incidencias o usuarios asignados');
+
+        }
     }
 }

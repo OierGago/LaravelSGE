@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\priority;
+use App\Models\incidents;
+
 use Illuminate\Http\Request;
 
 class PriorityController extends Controller
@@ -13,6 +15,7 @@ class PriorityController extends Controller
     public function index()
     {
         $priority = Priority::all();
+
         return view('priorities.index',['priority' => $priority]);
     }
 
@@ -21,8 +24,8 @@ class PriorityController extends Controller
      */
     public function create()
     {
-        $priority = Priority::all();
-        return view('priorities.create',['priority' => $priority]);
+        //$priority = Priority::all();
+        return view('priorities.formulario');
     }
 
     /**
@@ -50,8 +53,7 @@ class PriorityController extends Controller
      */
     public function edit(priority $priority)
     {
-        $priorities = Priority::all();
-        return view('priorities.edit',['priority' => $priority]);
+        return view('priorities.formulario',['priority' => $priority]);
     }
 
     /**

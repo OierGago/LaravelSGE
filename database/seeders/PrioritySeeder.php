@@ -17,21 +17,21 @@ class PrioritySeeder extends Seeder
         DB::table('priorities')->insert([
             'idPrioridad' => 1,
             'nombrePrioridad'=>"Baja",
-            'ordenPrioridad'=> 3,
+            'ordenPrioridad'=> 30,
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
         DB::table('priorities')->insert([
             'idPrioridad' => 2,
             'nombrePrioridad'=>"Media",
-            'ordenPrioridad'=> 2,
+            'ordenPrioridad'=> 20,
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
         DB::table('priorities')->insert([
             'idPrioridad' => 3,
             'nombrePrioridad'=>"Alta",
-            'ordenPrioridad'=> 1,
+            'ordenPrioridad'=> 10,
             'created_at'=>now(),
             'updated_at'=>now()
         ]);

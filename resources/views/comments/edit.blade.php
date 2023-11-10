@@ -25,15 +25,15 @@
                                     placeholder="Ingresa el tiempo estimado" />
                             </div>
                             <br>
-                            <div class="form-group">
-                                <label for="idIncidencias" class="form-label">Prioridad</label>
+                            {{-- <div class="form-group">
+                                <label for="idIncidencias" class="form-label">Incidencia</label>
                                 <select id="idIncidencias" name="idIncidencias">
                                     @foreach ($incidents as $incident)
                                         <option value="{{ $incident->idIncidencias }}">{{ $incident->tituloIncidencias }}
                                         </option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
                             <br>
                             <button type="submit" class="btn btn-primary">Actualizar</button>
                         </form>

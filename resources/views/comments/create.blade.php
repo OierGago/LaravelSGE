@@ -19,9 +19,4 @@
                                 required placeholder="introduce El tiempo utilizado" />
                         </div>
                         <button type="submit" class="btn btn-success">Crear</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+

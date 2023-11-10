@@ -3,7 +3,6 @@
     <div class="container contenido">
         <div class="col-md-12 col-xs-12">
             <div class="space-10"></div>
-            <form id="bug_action" method="post" action="bug_actiongroup_page.php">
                 {{-- header incidencias --}}
                 <div class="widget-box widget-color-blue2">
                     <div class="widget-header widget-header-small">
@@ -90,7 +89,6 @@
                         </div>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 @endsection

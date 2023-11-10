@@ -65,8 +65,8 @@
                                         <p>{{ $comentario->textoComentario }}</p>
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex flex-row align-items-center">
-                                                <p class="small text-muted mb-0">Respondido el: {{ $comentario->created_at }}
-                                                    por: {{ $comentario->usuario->name }}</p>
+                                                <p class="small text-muted mb-0">Respondido el {{ $comentario->created_at }}
+                                                    por {{ $comentario->usuario->name }}</p>
                                             </div>
                                             <div class="d-flex flex-row align-items-center">
                                                 <p class="small text-muted mb-0">Tiempo invertido:
@@ -75,10 +75,15 @@
                                                     <form action="{{ route('comments.destroy', $comentario) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-sm btn-danger" type="submit"
+                                                        <button class="btn botonComment btn-sm btn-danger" type="submit"
                                                             onclick="return confirm('Are you sure?')">Delete
                                                         </button>
                                                     </form>
+                                                @endif
+                                                @if ($comentario->idUsuarios == @Auth::user()->id)
+                                                <a class="btn botonComment btn-warning btn-sm"
+                                                href="{{ route('comments.edit', $comentario) }}"
+                                                role="button">Editar</a>
                                                 @endif
                                             </div>
                                         </div>
@@ -96,10 +101,15 @@
             <div class="d-none">
                 <label for="idIncidencias" class="form-label">Incidencia</label>
                 <select id="idIncidencias" name="idIncidencias" placeholder="A que incidencia se referencia">
-                    <option value="{{ $incident->idIncidencias }}">{{ $incident->tituloIncidencias }}</option>
+                    <option value="{{ $incident->idIncidencias }}">{{ $incident->idIncidencias }}</option>
                 </select>
             </div>
-            </form>
+        </form>
     </div>
+</div>
+</div>
+</div>
+</div>
+</div>
     @endif
 @endsection

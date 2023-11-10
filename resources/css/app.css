@@ -2,29 +2,31 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra */
     padding: 20px;
     border-radius: 10px;
-    background-color: #f0f2f5 !important
 }
 .form-control {
         border: 1px solid black;
     }
-.contenido
+/* .contenido
 {
     background-color: #cfcfcf;
     padding: 1.5em;
     border: 1px solid black !important;
-}
+} */
 
-.carta{
+/* .carta{
     background-color: #f0f2f5 !important
-}
+} */
 .texto
 {
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     padding: 3em;
 }
 .boton{
     margin-bottom: 1em;
     margin-right: .25em;
+}
+.botonComment{
+    margin-left: .25em;
 }
 .th
 {

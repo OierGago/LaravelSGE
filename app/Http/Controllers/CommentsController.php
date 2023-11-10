@@ -58,7 +58,7 @@ class CommentsController extends Controller
     public function edit(comments $comment)
     {
         $incidents= Incidents::all();
-        return view('comments.edit',['comment'=>$comment], ['incidents'=>$incidents]);
+        return view('comments.edit',['comment'=>$comment, 'incidents'=>$incidents]);
 
     }
 

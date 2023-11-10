@@ -1,0 +1,71 @@
+/* Fondo oscuro para el cuerpo */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  /* Tarjeta personalizada con fondo más oscuro */
+  .custom-card {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2); /* Sombra */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333; /* Fondo más oscuro */
+  }
+
+  /* Estilo de formulario */
+  .form-control {
+    border: 1px solid #fff; /* Borde blanco */
+    color: #fff; /* Texto blanco */
+  }
+
+  /* Contenido con fondo gris oscuro */
+  .contenido {
+    background-color: #333;
+    padding: 1.5em;
+    border: 1px solid #fff; /* Borde blanco */
+  }
+
+  /* Clase "carta" con fondo más oscuro */
+  .carta {
+    background-color: #333; /* Fondo más oscuro */
+  }
+
+  /* Texto con fondo blanco en la tarjeta */
+  .texto {
+    background-color: #fff; /* Fondo blanco */
+    padding: 3em;
+    color: #333; /* Texto oscuro */
+  }
+
+  /* Botón con margen inferior y fondo oscuro */
+  .boton {
+    margin-bottom: 1em;
+    margin-right: 0.25em;
+    background-color: #333; /* Fondo más oscuro */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #fff; /* Borde blanco */
+  }
+
+  /* Encabezados de tabla */
+  .th {
+    margin: 1em;
+  }
+
+  /* Filas de tabla */
+  .tr {
+    margin: 1em;
+  }
+
+  /* Tabla de incidencia con fondo oscuro y bordes blancos */
+  .tabla-incidencia {
+    width: 70%;
+    background-color: #333; /* Fondo más oscuro */
+    border: 1px solid #fff; /* Borde blanco */
+  }
+
+  /* Celdas de tabla con bordes blancos y texto blanco */
+  .tabla-incidencia td, .tabla-incidencia th {
+    border: 1px solid #fff; /* Borde blanco */
+    padding: 8px;
+    color: #fff; /* Texto blanco */
+  }

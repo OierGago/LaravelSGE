@@ -7,12 +7,12 @@
                     <div class="widget-header widget-header-small">
                         <h4 class="widget-title lighter">Visualizando categorias</h4>
                         @auth
-                        @if (Auth::user() != null)
-                        <a class="btn btn-success btn-sm float-right" href="{{ route('categories.create') }}"
-                            role="button">Crear una categoria</a>
+                            @if (Auth::user() != null)
+                                <a class="btn btn-success btn-sm float-right" href="{{ route('categories.create') }}"
+                                    role="button">Crear una categoria</a>
                             @endauth
-                            @else
-                            @endif
+                        @else
+                        @endif
                     </div><br>
                     <div class="widget-main no-padding">
                         <div class="table-responsive checkbox-range-selection">
@@ -20,18 +20,23 @@
                                 <h2 class="column-category">
                                     <a href="/categories/{{ $category->idCategoria }}">{{ $category->nombreCategoria }}</a>
                                 </h2>
-                                <div class="d-flex flex-row">
-                                <a class="btn boton btn-warning btn-sm"
-                                                                href="{{ route('categories.edit', $category) }}"
-                                                                role="button">Editar</a>
-                                <form action="{{route('categories.destroy',$category)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn boton btn-sm btn-danger" type="submit"
-                                    onclick="return confirm('Are you sure?')">Borrar
-                                    </button>
-                                    </form>
-                                </div>
+                                @auth
+                                    @if (Auth::user() != null)
+                                        <div class="d-flex flex-row">
+                                            <a class="btn boton btn-warning btn-sm"
+                                                href="{{ route('categories.edit', $category) }}" role="button">Editar</a>
+                                            <form action="{{ route('categories.destroy', $category) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn boton btn-sm btn-danger" type="submit"
+                                                    onclick="return confirm('Are you sure?')">Borrar
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                    @endauth
+                                @else
+                                @endif
                                 <table id="buglist"
                                     class="table table-bordered table-condensed table-hover table-striped">
                                     <thead>
@@ -56,7 +61,8 @@
                                                 <td class="column-department">
                                                     {{ $incident->departamento->nombreDepartamento }}
                                                 </td>
-                                                <td class="column-prioridad">  {{ $incident->prioridad->nombrePrioridad }}</td>
+                                                <td class="column-prioridad"> {{ $incident->prioridad->nombrePrioridad }}
+                                                </td>
                                                 <td class="column-last-modified">{{ $incident->created_at }}</td>
                                                 <td class="column-text">{{ $incident->descripcionIncidencias }}</td>
                                             </tr>
