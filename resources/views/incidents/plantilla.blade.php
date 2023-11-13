@@ -1,9 +1,15 @@
 <table id="buglist" class="table table-bordered table-condensed table-hover table-striped">
     <thead>
         <tr class="buglist-headers">
-            <th class="colum-editar">
-                <p>Editar</p>
-            </th>
+            @auth
+                @if (Auth::user()!= null)
+                <th class="colum-editar">
+                    <p>Editar</p>
+                </th>
+                @endif
+                @else
+            @endauth
+
             <th class="column-priority">
                 <p>Prioridad</p>
             </th>
