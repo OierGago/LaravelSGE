@@ -23,7 +23,6 @@ return new class extends Migration
             $table->unsignedBigInteger('idEstadoDeIncidencias')->nullable();
             $table->foreign('idEstadoDeIncidencias')->references('idEstadoDeIncidencias')->on('incident_statuses')->onDelete('set null');
             $table->unsignedBigInteger('idPrioridad')->nullable();
-
             $table->foreign('idPrioridad')->references('idPrioridad')->on('priorities')->onDelete('set null');
             $table->rememberToken();
             $table->timestamps();
@@ -37,6 +36,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('incidents');
-        $table->dropForeign(['idCategoria']);
     }
 };

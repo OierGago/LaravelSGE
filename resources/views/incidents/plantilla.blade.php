@@ -2,12 +2,12 @@
     <thead>
         <tr class="buglist-headers">
             @auth
-                @if (Auth::user()!= null)
-                <th class="colum-editar">
-                    <p>Editar</p>
-                </th>
+                @if (Auth::user() != null)
+                    <th class="colum-editar">
+                        <p>Editar</p>
+                    </th>
                 @endif
-                @else
+            @else
             @endauth
 
             <th class="column-priority">
@@ -43,17 +43,30 @@
                             <a class="btn btn-warning btn-sm" href="{{ route('incidents.edit', $incident) }}"
                                 role="button">Editar</a>
                         </td>
-                        @else
+                    @else
                         <td></td>
                     @endif
                 @endauth
+                @if ($incident->prioridad == null)
+                    <td class="column-category"></td>
+                @else
                 <td class="column-priority">{{ $incident->prioridad->nombrePrioridad }}</td>
+                @endif
                 <td class="column-title"><a href="incidents/{{ $incident->idIncidencias }}">
                         {{ $incident->tituloIncidencias }}</a></td>
-                <td class="column-category">{{ $incident->categoria->nombreCategoria }}</td>
-                <td class="column-status">
-                    {{ $incident->estatus->nombreEstadoDeIncidencias }}
-                </td>
+
+                @if ($incident->categoria == null)
+                    <td class="column-category"></td>
+                @else
+                    <td class="column-category">{{ $incident->categoria->nombreCategoria }}</td>
+                @endif
+                @if ($incident->estatus == null)
+                    <td class="column-category"></td>
+                @else
+                    <td class="column-status">
+                        {{ $incident->estatus->nombreEstadoDeIncidencias }}
+                    </td>
+                @endif
                 <td class="column-department">
                     {{ $incident->departamento->nombreDepartamento }}
                 </td>
