@@ -2,12 +2,9 @@
 @section('content')
     <div class="container contenido">
         <div class="col-md-12 col-xs-12">
-            <form id="bug_action" method="post" action="bug_actiongroup_page.php">
                 <div class="widget-box widget-color-blue2">
                     <div class="widget-header widget-header-small title_btn">
                         <div class="titleName">
-
-
                             <h4 class="widget-title lighter">Visualizando Prioridad</h4>
                         </div>
                         <div class="btnce">
@@ -57,7 +54,6 @@
                         </div>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 @endsection

@@ -31,12 +31,13 @@ class IncidentsController extends Controller
      */
     public function create()
     {
+        $incidents = Incidents::all();
         $categories = Categories::all();
         $departments = Departments::all();
         $users = users::all();
         $incidentStatuses = IncidentStatus::all();
         $priorities = Priority::all();
-        return view('incidents.formulario', ['priorities'=>$priorities,'categories'=>$categories, 'departments'=>$departments, 'users'=>$users, 'incidentStatuses'=>$incidentStatuses]);
+        return view('incidents.create', ['incidents' => $incidents,'priorities'=>$priorities,'categories'=>$categories, 'departments'=>$departments,  'incidentStatuses'=>$incidentStatuses]);
     }
 
     /**
@@ -77,7 +78,7 @@ class IncidentsController extends Controller
         $users = users::all();
         $incidentStatuses = IncidentStatus::all();
         $priorities = Priority::all();
-        return view('incidents.formulario',['incident'=>$incident, 'priorities'=>$priorities,'categories'=>$categories, 'departments'=>$departments, 'users'=>$users, 'incidentStatuses'=>$incidentStatuses]);
+        return view('incidents.edit',['incident'=>$incident, 'priorities'=>$priorities,'categories'=>$categories, 'departments'=>$departments, 'users'=>$users, 'incidentStatuses'=>$incidentStatuses]);
     }
 
     /**

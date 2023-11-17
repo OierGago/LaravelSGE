@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@if (Auth::user() != null && Auth::user()->id == $incident->idUsuarios)
+@if (Auth::user() != null && Auth::user()->id == $incident->$idUsuarios)
 <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">

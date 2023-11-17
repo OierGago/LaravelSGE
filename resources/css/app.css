@@ -81,17 +81,19 @@ h1 {
 
     color: #ffffff;
 }
-
-
-
-th,
-td {
-    white-space: nowrap;
-}
 .tableBody {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
- 
+
+.table {
+    display: block;
+    max-width:auto;
+    table-layout:fixed;
+    overflow-wrap: break-word;
+}
+.column-text{
+    overflow-wrap: break-word;
+}

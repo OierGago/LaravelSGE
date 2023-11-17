@@ -1,4 +1,4 @@
-<table id="buglist" class="table table-bordered table-condensed table-hover table-striped">
+<table id="buglist" class="table table-bordered  table-hover table-striped">
     <thead>
         <tr class="buglist-headers">
             @auth
@@ -71,7 +71,7 @@
                     {{ $incident->departamento->nombreDepartamento }}
                 </td>
                 <td class="column-last-modified">{{ $incident->created_at }}</td>
-                <td class="column-text">{{ $incident->descripcionIncidencias }}</td>
+                <td class="column-text"><p>{{ $incident->descripcionIncidencias }}</p></td>
             </tr>
         @endforeach
     </tbody>

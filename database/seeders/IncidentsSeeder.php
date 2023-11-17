@@ -16,8 +16,8 @@ class IncidentsSeeder extends Seeder
     {
         DB::table('incidents')->insert([
             'idIncidencias' => 1,
-            'tituloIncidencias'=>"Incidencia1",
-            'descripcionIncidencias'=>"Esto es la primera incidencia",
+            'tituloIncidencias'=>"No adapter attached; skipping layout",
+            'descripcionIncidencias'=>"A la hora de intentar asociarle un adapter a una vista no se pone",
             'tiempoIncidencia'=>3,
             'idCategoria'=>1,
             'idDepartamento'=>1,
@@ -42,8 +42,8 @@ class IncidentsSeeder extends Seeder
         ]);
         DB::table('incidents')->insert([
             'idIncidencias' => 3,
-            'tituloIncidencias'=>"Incidencia Bucle inverso",
-            'descripcionIncidencias'=>"Al hacer un bucle for pasa por todos los números negativos antes de pasar a los positivos de nuevo",
+            'tituloIncidencias'=>"Adapter no actualiza la lista",
+            'descripcionIncidencias'=>"El observer de la aplicación notifica que hay un cambio en la lista pero el adapter no cambia la lista",
             'tiempoIncidencia'=>20,
             'idCategoria'=>3,
             'idDepartamento'=>3,

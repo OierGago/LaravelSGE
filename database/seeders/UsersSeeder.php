@@ -16,7 +16,7 @@ class UsersSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => "Markel",
-            'email'=>"ddd@gmail.com",
+            'email'=>"markel@gmail.com",
             'password'=>bcrypt('12345678'),
             'idDepartamento'=> 1,
             'created_at'=>now(),
@@ -24,7 +24,7 @@ class UsersSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name' => "Oier",
-            'email'=>"rrr@gmail.com",
+            'email'=>"oier@gmail.com",
             'password'=>bcrypt("12345678"),
             'idDepartamento'=>2,
             'created_at'=>now(),
